@@ -1,0 +1,22 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  app:
+    build: .
+    container_name: health-app
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017  # 👈 use service name "mongo"
+    stdin_open: true
+    tty: true
+
+volumes:
+  mongo-data:
