@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Prediction Result</h1>
+      <p id="resultText">Processing...</p>
+      <a href="index.html">Go Back</a>
+    </div>
+    <script>
+      // Fetch query parameters from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const age = urlParams.get("age");
+      const gender = urlParams.get("gender");
+      const glucose = urlParams.get("glucose");
+      const cholesterol = urlParams.get("cholesterol");
+
+      // Example prediction logic (Replace with actual model call)
+      function getPrediction(age, gender, glucose, cholesterol) {
+        let riskScore =
+          parseInt(age) + parseInt(glucose) + parseInt(cholesterol);
+        return riskScore > 300 ? "High Risk" : "Low Risk";
+      }
+
+      document.getElementById(
+        "resultText"
+      ).innerText = `Prediction: ${getPrediction(
+        age,
+        gender,
+        glucose,
+        cholesterol
+      )}`;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardiac Attack Prediction</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Cardiac Attack Prediction</h1>
+      <form id="predictionForm" action="result.html" method="GET">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required />
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+          <option value="1">Male</option>
+          <option value="0">Female</option>
+        </select>
+
+        <label for="glucose">Glucose Level:</label>
+        <input type="number" id="glucose" name="glucose" required />
+
+        <label for="cholesterol">Cholesterol Level:</label>
+        <input type="number" id="cholesterol" name="cholesterol" required />
+
+        <label for="bloodPressure">Blood Pressure:</label>
+        <input type="number" id="bloodPressure" name="bloodPressure" required />
+
+        <label for="heartRate">Heart Rate:</label>
+        <input type="number" id="heartRate" name="heartRate" required />
+
+        <label for="bmi">BMI:</label>
+        <input type="number" id="bmi" name="bmi" required />
+
+        <label for="smoking">Smoking Status:</label>
+        <select id="smoking" name="smoking">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+
+        <label for="diabetes">Diabetes:</label>
+        <select id="diabetes" name="diabetes">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+
+        <label for="exercise">Exercise Frequency (per week):</label>
+        <input type="number" id="exercise" name="exercise" required />
+
+        <label for="familyHistory">Family History of Heart Disease:</label>
+        <select id="familyHistory" name="familyHistory">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+
+        <label for="alcohol">Alcohol Consumption:</label>
+        <select id="alcohol" name="alcohol">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+
+        <label for="stress">Stress Levels (1-10):</label>
+        <input
+          type="number"
+          id="stress"
+          name="stress"
+          min="1"
+          max="10"
+          required
+        />
+
+        <label for="diet">Diet Score (1-10):</label>
+        <input type="number" id="diet" name="diet" min="1" max="10" required />
+
+        <label for="sleep">Sleep Hours per Night:</label>
+        <input type="number" id="sleep" name="sleep" required />
+
+        <button type="submit">Predict Risk</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

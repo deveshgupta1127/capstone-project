@@ -1,0 +1,99 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body {
+  padding-top: 300px; /* Adjust as needed */
+}
+
+.container {
+  margin-top: 50px; /* Pushes the form down */
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+  color: #ff4081;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+  font-size: 14px;
+}
+
+input,
+select {
+  padding: 12px;
+  margin-top: 5px;
+  border: 2px solid #ff80ab;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus,
+select:focus {
+  border-color: #ff4081;
+  outline: none;
+  box-shadow: 0px 0px 8px rgba(255, 64, 129, 0.5);
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px;
+  background: linear-gradient(to right, #ff4081, #ff80ab);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(to right, #ff1744, #ff5252);
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#result {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff1744;
+}
