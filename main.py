@@ -10,5 +10,9 @@ class HealthApp(App):
         sm.add_widget(HealthForm(name='health'))
         return sm
 
+<<<<<<< HEAD
 if __name__ == "__main__":
+=======
+if __name__ == '__main__':
+>>>>>>> 586fa6ad2e53dd92bb456fa21097f796060179a0
     HealthApp().run()
