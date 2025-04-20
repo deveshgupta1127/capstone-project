@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: kivy_health_app
+    volumes:
+      - .:/app
+    ports:
+      - "5000:5000"  # if your app exposes any web port (not needed for desktop-only)
+    depends_on:
+      - mongo
+    environment:
+      - PYTHONUNBUFFERED=1
+    stdin_open: true
+    tty: true
+
+  mongo:
+    image: mongo:5.0
+    container_name: mongo_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
