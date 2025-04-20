@@ -6,3 +6,4 @@ A Kivy-based application for heart/stroke prediction using a trained Random Fore
 
 ```bash
 docker-compose up --build
+docker run -it raajitsingh1306/health-app
