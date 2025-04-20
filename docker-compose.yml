@@ -1,44 +1,6 @@
-<<<<<<< HEAD
-version: '3'
-services:
-  mongo:
-    image: mongo
-    container_name: mongodb
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
-
-  app:
-    build: .
-    container_name: health-app
-    depends_on:
-      - mongo
-    environment:
-      - MONGO_URI=mongodb://mongo:27017  # 👈 use service name "mongo"
-    stdin_open: true
-    tty: true
-
-volumes:
-  mongo-data:
-=======
 version: "3.8"
 
 services:
-  app:
-    build: .
-    container_name: kivy_health_app
-    volumes:
-      - .:/app
-    ports:
-      - "5000:5000"  # if your app exposes any web port (not needed for desktop-only)
-    depends_on:
-      - mongo
-    environment:
-      - PYTHONUNBUFFERED=1
-    stdin_open: true
-    tty: true
-
   mongo:
     image: mongo:5.0
     container_name: mongo_db
@@ -47,6 +9,20 @@ services:
     volumes:
       - mongo_data:/data/db
 
+  app:
+    build: .
+    container_name: kivy_health_app
+    volumes:
+      - .:/app
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017
+      - PYTHONUNBUFFERED=1
+    stdin_open: true
+    tty: true
+    ports:
+      - "5000:5000"  # Optional, if your app exposes an API/UI
+
 volumes:
   mongo_data:
->>>>>>> 586fa6ad2e53dd92bb456fa21097f796060179a0
